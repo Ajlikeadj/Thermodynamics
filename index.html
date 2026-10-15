@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thermodynamics — How an Air Conditioner Works</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#cycle">Skip to content</a>
+  <header class="topbar"><a class="logo" href="#top"><span class="logo-mark">✦</span> COOL / CYCLE</a><div class="top-actions"><div class="top-meta">THERMODYNAMICS 101 <span class="dot"></span> 04 MIN READ</div><button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode"><span class="theme-icon">☼</span><span class="theme-text">LIGHT</span></button></div></header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="eyebrow">A room is a heat story.</div>
+      <h1>Thermodynamics</h1>
+      <div class="hero-bottom"><p>Four laws decide where heat goes. Scroll to see them, then watch an air conditioner put them to work.</p><a class="scroll-cue" href="#laws"><span>↓</span> SCROLL TO MEET THE LAWS</a></div>
+      <div class="hero-orb orb-a"></div><div class="hero-orb orb-b"></div>
+    </section>
+
+    <section id="laws" class="laws-section section-shell"><div class="laws-line"><div id="lawsFill"></div></div><div class="section-intro reveal"><div><div class="eyebrow">THE RULES BEHIND IT</div><h2>Four laws<br>of heat.</h2></div><div class="intro-copy">Every air conditioner obeys the same four laws of thermodynamics. Scroll to meet them.</div></div><article class="law reveal"><div class="law-num">0</div><div class="law-body"><h3>Zeroth law: temperature is real</h3><p class="law-rule">If A is in thermal balance with B, and B with C, then A and C are in balance too. That is why a thermometer can measure anything.</p><p><b>Everyday example:</b> A thermometer under your tongue settles at body temperature, so its reading tells you your temperature.</p></div><div class="law-vis" aria-hidden="true"><div class="v0"><i></i><i></i></div></div></article><article class="law reveal"><div class="law-num">1</div><div class="law-body"><h3>First law: energy is never lost</h3><p class="law-rule">Energy cannot be created or destroyed, only moved or converted. Heat in + work in = heat out.</p><p><b>Everyday example:</b> A pressure cooker: the energy from the stove ends up as heat in the food and steam, none vanishes.</p></div><div class="law-vis" aria-hidden="true"><div class="v1"><i class="a">Room heat</i><i class="b">Electricity</i><i class="c">Heat outside</i></div></div></article><article class="law reveal"><div class="law-num">2</div><div class="law-body"><h3>Second law: heat flows downhill</h3><p class="law-rule">Heat flows by itself only from hot to cold. Moving it the other way takes work, and some energy is always wasted.</p><p><b>Everyday example:</b> A hot coffee cools to room temperature. It never heats itself back up.</p></div><div class="law-vis" aria-hidden="true"><div class="v2"><b></b><s></s></div></div></article><article class="law reveal"><div class="law-num">3</div><div class="law-body"><h3>Third law: absolute zero is unreachable</h3><p class="law-rule">As a system nears absolute zero (−273.15 °C), removing the last bit of heat gets harder and harder. You can approach it but never reach it.</p><p><b>Everyday example:</b> Each step of cooling a freezer-cold drink further costs more energy than the last.</p></div><div class="law-vis" aria-hidden="true"><div class="v3"><i></i><i></i><i></i><i></i></div></div></article></section>
+
+    <section id="ac-intro" class="ac-intro section-shell reveal"><h2>How does an <em>air conditioner</em> actually cool?</h2><p>It doesn’t create cold. It moves heat — on a continuous loop, using pressure, phase changes, and a little bit of clever engineering.</p></section>
+
+    <section id="cycle" class="cycle-section section-shell">
+      <div class="section-intro"><div><div class="eyebrow">THE FOUR-PART JOURNEY</div><h2>Follow the heat.</h2></div><div class="intro-copy">Watch the refrigerant change its state as it travels through the system. Scroll to advance the story, or use the control below.</div></div>
+      <div class="cycle-layout">
+        <div class="diagram-card" id="diagramCard">
+          <div class="diagram-label"><span>LIVE SYSTEM MAP</span><span id="diagramState">01 / 04</span></div>
+          <div class="zone-labels"><span>← INSIDE YOUR ROOM</span><span>OUTSIDE →</span></div><svg class="system-svg" viewBox="0 0 760 430" role="img" aria-label="Air conditioner cycle diagram">
+            <defs><linearGradient id="coolGrad" x1="0" x2="1"><stop stop-color="#70e1ff"/><stop offset="1" stop-color="#4aa7ff"/></linearGradient><linearGradient id="hotGrad" x1="0" x2="1"><stop stop-color="#ffb25e"/><stop offset="1" stop-color="#ff5e67"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <path class="pipe cool-pipe" d="M 182 116 H 580 Q 650 116 650 185 V 277 Q 650 330 580 330 H 182 Q 110 330 110 260 V 185 Q 110 116 182 116"/>
+            <path class="pipe hot-pipe" d="M 182 116 H 580 Q 650 116 650 185"/>
+            <path class="pipe warm-pipe" d="M 650 277 Q 650 330 580 330 H 182"/>
+            <g class="flow-dots cool-flow"><circle r="5"><animateMotion dur="4s" repeatCount="indefinite" path="M 182 116 H 580 Q 650 116 650 185 V 277 Q 650 330 580 330 H 182 Q 110 330 110 260 V 185 Q 110 116 182 116"/></circle></g>
+            <g class="unit indoor"><rect x="52" y="180" width="116" height="74" rx="14"/><text x="110" y="210">INDOOR</text><text x="110" y="232" class="unit-sub">EVAPORATOR</text><path d="M78 244h64"/></g>
+            <g class="unit compressor"><rect x="245" y="72" width="124" height="88" rx="14"/><text x="307" y="105">COMPRESSOR</text><text x="307" y="128" class="unit-sub">PRESSURE ↑</text><circle cx="307" cy="147" r="4"/></g>
+            <g class="unit condenser"><rect x="488" y="180" width="136" height="74" rx="14"/><text x="556" y="210">OUTDOOR</text><text x="556" y="232" class="unit-sub">CONDENSER</text><path d="M512 244h88"/></g>
+            <g class="unit valve"><rect x="245" y="288" width="124" height="78" rx="14"/><text x="307" y="320">EXPANSION</text><text x="307" y="343" class="unit-sub">VALVE · PRESSURE ↓</text></g>
+            <g class="heat-waves"><path d="M685 196q12 12 0 24t0 24"/><path d="M704 196q12 12 0 24t0 24"/></g><g class="snowflake"><path d="M188 194v45M166 216h45M173 201l31 31M204 201l-31 31"/></g>
+          </svg>
+          <div class="legend"><span><i class="legend-cool"></i> LOW PRESSURE / COOL</span><span><i class="legend-hot"></i> HIGH PRESSURE / HOT</span></div>
+        </div>
+        <div class="story-column">
+          <article class="story active" data-step="0"><span class="story-num">01</span><div><h3>Absorb the heat.</h3><p>Inside your room, the evaporator coil is cold. Warm room air passes over it, and the refrigerant absorbs that heat as it turns from a liquid into a gas.</p></div></article>
+          <article class="story" data-step="1"><span class="story-num">02</span><div><h3>Compress the gas.</h3><p>The compressor squeezes the low-pressure gas. Squeezing adds energy: the refrigerant becomes a hot, high-pressure gas ready to release its heat outside.</p></div></article>
+          <article class="story" data-step="2"><span class="story-num">03</span><div><h3>Dump the heat.</h3><p>In the outdoor condenser, heat leaves the refrigerant and escapes into the outside air. The gas cools and condenses back into a liquid.</p></div></article>
+          <article class="story" data-step="3"><span class="story-num">04</span><div><h3>Reset the pressure.</h3><p>The expansion valve drops the liquid’s pressure and temperature. Now it is cold again — ready to return indoors and repeat the loop.</p></div></article>
+          <div class="manual-control"><button id="prev" aria-label="Previous step">←</button><div class="progress"><div id="progressBar"></div></div><button id="next" aria-label="Next step">→</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principle section-shell"><div class="principle-art"><div class="big-number">01</div><div class="orbit"></div><div class="orbit orbit-two"></div><div class="center-chip">Q<span>in</span></div></div><div class="principle-copy"><div class="eyebrow">THE BIG IDEA</div><h2>Heat always<br>has somewhere<br>to go.</h2><p>When the refrigerant evaporates, it pulls heat from the room. When it condenses, it lets that heat go outside. The cycle never stops while the system is running.</p><div class="formula">Q<sub>room</sub> → refrigerant → Q<sub>outside</sub></div></div></section>
+    <section class="entropy-section section-shell" id="entropy"><div class="entropy-heading"><div><div class="eyebrow">A SECOND LENS</div><h2>The refrigeration cycle<br>on a <em>T–s diagram.</em></h2></div><p>Temperature is plotted vertically and entropy horizontally. Select each state to see what the refrigerant is doing at that point in the cycle.</p></div><div class="graph-card"><div class="graph-top"><div><span class="graph-title">TEMPERATURE vs. ENTROPY</span><span class="graph-sub">Idealized vapor-compression cycle · 4 states</span></div><div class="graph-readout"><span id="heatReadout">State 1 · Evaporator outlet</span><b id="entropyReadout">Cold gas</b></div></div><div class="graph-wrap"><svg viewBox="0 0 800 390" role="img" aria-label="Temperature versus entropy diagram of the four-state refrigeration cycle">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow-head"/></marker></defs>
+<path class="grid-lines" d="M90 35H750M90 105H750M90 175H750M90 245H750M90 315H750M255 35V315M420 35V315M585 35V315M750 35V315"/>
+<path class="axis" d="M90 315H750M90 35V315"/>
+<path class="dome" d="M120 300C140 200 250 110 400 80C520 110 620 190 690 300"/>
+<text class="dome-label" x="330" y="68">Liquid + vapor dome</text>
+<text class="zone-label" x="440" y="290">Mixture</text>
+<line class="level" x1="90" y1="141" x2="750" y2="141"/><line class="level" x1="90" y1="238" x2="750" y2="238"/>
+<path class="ts-cycle" d="M644 238V95C625 120 580 132 536 141H242L330 238Z"/>
+<path class="flow" d="M500 238H600" marker-end="url(#arr)"/><path class="flow" d="M644 190V150" marker-end="url(#arr)"/><path class="flow" d="M450 141H400" marker-end="url(#arr)"/><path class="flow" d="M280 190L300 212" marker-end="url(#arr)"/>
+<g class="graph-point" data-state="0" tabindex="0" role="button" aria-label="State 1"><circle cx="644" cy="238" r="9"/><text x="662" y="258">1</text></g>
+<g class="graph-point" data-state="1" tabindex="0" role="button" aria-label="State 2"><circle cx="644" cy="95" r="9"/><text x="662" y="90">2</text></g>
+<g class="graph-point" data-state="2" tabindex="0" role="button" aria-label="State 3"><circle cx="242" cy="141" r="9"/><text x="214" y="136">3</text></g>
+<g class="graph-point" data-state="3" tabindex="0" role="button" aria-label="State 4"><circle cx="330" cy="238" r="9"/><text x="342" y="260">4</text></g>
+<text class="axis-label" x="40" y="48">Temp.</text><text class="axis-label" x="640" y="345">Entropy (s) →</text>
+</svg></div>
+<div class="state-picker" role="group" aria-label="Choose a state"><button data-state="0" class="on">1</button><button data-state="1">2</button><button data-state="2">3</button><button data-state="3">4</button></div>
+<p class="state-desc" id="stateDesc" aria-live="polite"></p>
+<div class="graph-notes"><span>Tap a point or number to see what happens there. The loop runs 1 → 2 → 3 → 4 → 1.</span></div></div></section>
+
+    <section id="system" class="system-section section-shell">
+<div class="section-intro reveal"><div><div class="eyebrow">THE VOCABULARY</div><h2>System, Surroundings<br>and Boundary</h2></div><div class="intro-copy">Before measuring heat, decide what you are studying and where it ends.</div></div>
+<div class="ssb-grid reveal">
+<div class="ssb-diagram" aria-hidden="true"><div class="ssb-out"><span class="lbl">Surroundings</span><div class="ssb-bound"><span class="lbl">Boundary</span><div class="ssb-sys">System</div></div></div></div>
+<div class="ssb-cards"><div class="ssb-card"><h3>System</h3><p>The part of the universe you choose to study.</p><p class="ex"><b>Example:</b> The air and water inside a pressure cooker.</p></div><div class="ssb-card"><h3>Surroundings</h3><p>Everything outside the system that can exchange energy or matter with it.</p><p class="ex"><b>Example:</b> The kitchen and the stove.</p></div><div class="ssb-card"><h3>Boundary</h3><p>The real or imaginary surface separating the two. It can be fixed or moving.</p><p class="ex"><b>Example:</b> The cooker wall, or the stretching skin of a balloon.</p></div></div></div>
+<p class="ssb-types reveal"><b>Three kinds of system.</b> An <em>open</em> system exchanges matter and energy (a boiling pot with no lid). A <em>closed</em> system exchanges only energy (a sealed can on a stove). An <em>isolated</em> system exchanges neither (an ideal sealed thermos).</p>
+
+<h3 class="sub reveal">Properties of a system</h3>
+<p class="sub-copy reveal">A property is any measurable characteristic that describes the state of a system. Properties come in two families, and one quick test tells them apart: cut the system in half.</p>
+<div class="prop-grid reveal">
+<div class="prop"><h4>Intensive properties</h4><p>Do <b>not</b> depend on how much matter there is. Cut the system in half and the value stays the same.</p><ul><li>Temperature: a cup and a bucket of tea can both be 60 °C.</li><li>Pressure: the air pressure in a small and a big tyre can match.</li><li>Density: 1 g or 1 kg of water is about 1 g/cm³.</li></ul></div>
+<div class="prop"><h4>Extensive properties</h4><p><b>Do</b> depend on the amount of matter. Cut the system in half and the value halves.</p><ul><li>Mass: a bucket of water has more than a cup.</li><li>Volume: a big balloon holds more air than a small one.</li><li>Total energy: a litre of hot water stores more heat than a spoonful.</li></ul></div></div>
+<p class="ssb-types reveal"><b>Handy trick.</b> Divide an extensive property by mass and you get an intensive one. Volume ÷ mass gives specific volume, and energy ÷ mass gives specific energy.</p>
+
+<h3 class="sub reveal">What is a process?</h3>
+<p class="sub-copy reveal">A process is the path a system follows when it changes from one state to another, such as when its temperature, pressure or volume changes. If a system goes through several processes and ends in its starting state, that sequence is called a cycle. The four-state loop in the T–s diagram above is exactly that.</p>
+<div class="proc-grid reveal"><div class="proc"><h4>Isothermal</h4><span class="rule">Temperature constant</span><p>Ice melting at 0 °C. Heat goes in, but the temperature holds steady.</p></div><div class="proc"><h4>Isobaric</h4><span class="rule">Pressure constant</span><p>Water boiling in an open pot. The air pressure above it stays the same.</p></div><div class="proc"><h4>Isochoric</h4><span class="rule">Volume constant</span><p>Heating a sealed rigid can. It cannot expand, so the pressure rises.</p></div><div class="proc"><h4>Adiabatic</h4><span class="rule">No heat exchanged</span><p>Pumping a bike tyre quickly. The air warms because there is no time for heat to escape.</p></div></div>
+</section>
+
+    <footer class="footer section-shell"><div class="footer-bottom"><span>COOL / CYCLE — A VISUAL EXPLAINER</span><span class="watermark">Made By <a href="https://github.com/Ajlikeadj" target="_blank" rel="noopener noreferrer">Ajlikeadj</a></span><a href="#top">BACK TO TOP ↑</a></div></footer>
+  </main>
+  <script src="script.js"></script>
+</body></html>
