@@ -1,0 +1,19 @@
+{
+  "name": "thermodynamics",
+  "version": "1.0.0",
+  "description": "Thermodynamics — How an Air Conditioner Works",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build process needed for vanilla HTML'",
+    "lint": "npx eslint script.js",
+    "test": "echo 'No tests configured yet'"
+  },
+  "keywords": ["thermodynamics", "air-conditioner", "education"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
