@@ -1,14 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Vercel Web Analytics -->
-  <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-
-  <!-- Vercel Speed Insights -->
-  <script defer src="/_vercel/insights/script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thermodynamics — How an Air Conditioner Works</title>
@@ -18,17 +10,22 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="reading-progress" aria-hidden="true"><i></i></div>
   <a class="skip" href="#cycle">Skip to content</a>
-  <header class="topbar"><a class="logo" href="#top"><span class="logo-mark">✦</span> COOL / CYCLE</a><div class="top-actions"><div class="top-meta">THERMODYNAMICS 101 <span class="dot"></span> 04 MIN READ</div><button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode"><span class="theme-icon">☼</span><span class="theme-text">LIGHT</span></button></div></header>
+  <header class="topbar"><a class="logo" href="#top"><span class="logo-mark">✦</span> COOL / CYCLE</a><div class="top-actions"><nav class="chapter-nav" aria-label="Chapters"><a href="#laws">01 / Laws</a><a href="#cycle">02 / Cycle</a><a href="#entropy">03 / States</a><a href="#system">04 / Basics</a></nav><button class="motion-toggle" id="motionToggle" aria-pressed="false" aria-label="Pause decorative motion">PAUSE MOTION</button><button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode"><span class="theme-icon">☼</span><span class="theme-text">LIGHT</span></button></div></header>
 
   <main id="top">
     <section class="hero section-shell">
-      <div class="eyebrow">A room is a heat story.</div>
-      <h1>Thermodynamics</h1>
-      <div class="hero-bottom"><p>Four laws decide where heat goes. Scroll to see them, then watch an air conditioner put them to work.</p><a class="scroll-cue" href="#laws"><span>↓</span> SCROLL TO MEET THE LAWS</a></div>
-      <div class="hero-orb orb-a"></div><div class="hero-orb orb-b"></div>
+      <div class="hero-kicker"><div class="eyebrow"><span class="status-dot"></span> THERMODYNAMICS, MADE VISIBLE</div><span class="edition">AN INTERACTIVE FIELD GUIDE / VOL. 01</span></div>
+      <div class="hero-stage">
+        <h1><span class="title-line">The art of</span><span class="title-line"><em>moving</em></span><span class="title-line">heat<span class="title-period">.</span></span></h1>
+        <div class="thermal-art" aria-hidden="true"><div class="thermal-orbit"><span class="orbit-marker"></span></div><div class="thermal-ring"><div class="ring-core"></div></div><div class="art-cross cross-a">+</div><div class="art-cross cross-b">+</div><span class="art-label label-hot">Q OUT ↗<small>RELEASE / WARM</small></span><span class="art-label label-cold">↙ Q IN<small>ABSORB / COOL</small></span><span class="art-center">ENERGY<br>IN TRANSIT</span><span class="art-index">FIG. 001 — A CONTINUOUS EXCHANGE</span></div>
+        <span class="hero-side">NOTHING DISAPPEARS. EVERYTHING TRANSFORMS.</span>
+      </div>
+      <div class="hero-bottom"><p>Cold isn’t created.<br><span>Heat just finds a new place to be.</span><small>Four laws. One continuous cycle. A different way to see the air around you.</small></p><a class="scroll-cue" href="#laws"><span>↓</span><b>FOLLOW THE ENERGY<small>SCROLL TO EXPLORE</small></b></a></div>
     </section>
 
+    <div class="chapter-strip" aria-hidden="true"><div class="strip-track"><span>ENERGY IS NEVER LOST</span><i>↗</i><span>ONLY TRANSFORMED</span><i>↘</i><span>ENERGY IS NEVER LOST</span><i>↗</i><span>ONLY TRANSFORMED</span><i>↘</i></div></div>
     <section id="laws" class="laws-section section-shell"><div class="laws-line"><div id="lawsFill"></div></div><div class="section-intro reveal"><div><div class="eyebrow">THE RULES BEHIND IT</div><h2>Four laws<br>of heat.</h2></div><div class="intro-copy">Every air conditioner obeys the same four laws of thermodynamics. Scroll to meet them.</div></div><article class="law reveal"><div class="law-num">0</div><div class="law-body"><h3>Zeroth law: temperature is real</h3><p class="law-rule">If A is in thermal balance with B, and B with C, then A and C are in balance too. That is why a thermometer can measure anything.</p><p><b>Everyday example:</b> A thermometer under your tongue settles at body temperature, so its reading tells you your temperature.</p></div><div class="law-vis" aria-hidden="true"><div class="v0"><i></i><i></i></div></div></article><article class="law reveal"><div class="law-num">1</div><div class="law-body"><h3>First law: energy is never lost</h3><p class="law-rule">Energy cannot be created or destroyed, only moved or converted. Heat in + work in = heat out.</p><p><b>Everyday example:</b> A pressure cooker: the energy from the stove ends up as heat in the food and steam, none vanishes.</p></div><div class="law-vis" aria-hidden="true"><div class="v1"><i class="a">Room heat</i><i class="b">Electricity</i><i class="c">Heat outside</i></div></div></article><article class="law reveal"><div class="law-num">2</div><div class="law-body"><h3>Second law: heat flows downhill</h3><p class="law-rule">Heat flows by itself only from hot to cold. Moving it the other way takes work, and some energy is always wasted.</p><p><b>Everyday example:</b> A hot coffee cools to room temperature. It never heats itself back up.</p></div><div class="law-vis" aria-hidden="true"><div class="v2"><b></b><s></s></div></div></article><article class="law reveal"><div class="law-num">3</div><div class="law-body"><h3>Third law: absolute zero is unreachable</h3><p class="law-rule">As a system nears absolute zero (−273.15 °C), removing the last bit of heat gets harder and harder. You can approach it but never reach it.</p><p><b>Everyday example:</b> Each step of cooling a freezer-cold drink further costs more energy than the last.</p></div><div class="law-vis" aria-hidden="true"><div class="v3"><i></i><i></i><i></i><i></i></div></div></article></section>
 
     <section id="ac-intro" class="ac-intro section-shell reveal"><h2>How does an <em>air conditioner</em> actually cool?</h2><p>It doesn’t create cold. It moves heat — on a continuous loop, using pressure, phase changes, and a little bit of clever engineering.</p></section>
@@ -37,7 +34,7 @@
       <div class="section-intro"><div><div class="eyebrow">THE FOUR-PART JOURNEY</div><h2>Follow the heat.</h2></div><div class="intro-copy">Watch the refrigerant change its state as it travels through the system. Scroll to advance the story, or use the control below.</div></div>
       <div class="cycle-layout">
         <div class="diagram-card" id="diagramCard">
-          <div class="diagram-label"><span>LIVE SYSTEM MAP</span><span id="diagramState">01 / 04</span></div>
+          <div class="diagram-label"><span><i class="status-dot"></i> LIVE SYSTEM MAP</span><span id="diagramState">01 / 04</span></div>
           <div class="zone-labels"><span>← INSIDE YOUR ROOM</span><span>OUTSIDE →</span></div><svg class="system-svg" viewBox="0 0 760 430" role="img" aria-label="Air conditioner cycle diagram">
             <defs><linearGradient id="coolGrad" x1="0" x2="1"><stop stop-color="#70e1ff"/><stop offset="1" stop-color="#4aa7ff"/></linearGradient><linearGradient id="hotGrad" x1="0" x2="1"><stop stop-color="#ffb25e"/><stop offset="1" stop-color="#ff5e67"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
             <path class="pipe cool-pipe" d="M 182 116 H 580 Q 650 116 650 185 V 277 Q 650 330 580 330 H 182 Q 110 330 110 260 V 185 Q 110 116 182 116"/>
@@ -102,7 +99,7 @@
 <div class="proc-grid reveal"><div class="proc"><h4>Isothermal</h4><span class="rule">Temperature constant</span><p>Ice melting at 0 °C. Heat goes in, but the temperature holds steady.</p></div><div class="proc"><h4>Isobaric</h4><span class="rule">Pressure constant</span><p>Water boiling in an open pot. The air pressure above it stays the same.</p></div><div class="proc"><h4>Isochoric</h4><span class="rule">Volume constant</span><p>Heating a sealed rigid can. It cannot expand, so the pressure rises.</p></div><div class="proc"><h4>Adiabatic</h4><span class="rule">No heat exchanged</span><p>Pumping a bike tyre quickly. The air warms because there is no time for heat to escape.</p></div></div>
 </section>
 
-    <footer class="footer section-shell"><div class="footer-bottom"><span>COOL / CYCLE — A VISUAL EXPLAINER</span><span class="watermark">Made By <a href="https://github.com/Ajlikeadj" target="_blank" rel="noopener noreferrer">Ajlikeadj</a></span><a href="#top">BACK TO TOP ↑</a></div></footer>
+    <footer class="footer section-shell"><div class="footer-statement">Stay curious.<br><em>Keep your cool.</em><a class="footer-up" href="#top" aria-label="Back to top">↗</a></div><div class="footer-bottom"><span>COOL / CYCLE — A VISUAL EXPLAINER</span><span class="watermark">Made By <a href="https://github.com/Ajlikeadj" target="_blank" rel="noopener noreferrer">Ajlikeadj</a></span><a href="#top">BACK TO TOP ↑</a></div></footer>
   </main>
   <script src="script.js"></script>
 </body></html>
