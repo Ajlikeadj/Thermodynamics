@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Thermodynamics — How an Air Conditioner Works</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <body>
   <div class="reading-progress" aria-hidden="true"><i></i></div>
   <a class="skip" href="#cycle">Skip to content</a>
-  <header class="topbar"><a class="logo" href="#top"><span class="logo-mark">✦</span> COOL / CYCLE</a><div class="top-actions"><nav class="chapter-nav" aria-label="Chapters"><a href="#laws">01 / Laws</a><a href="#cycle">02 / Cycle</a><a href="#entropy">03 / States</a><a href="#system">04 / Basics</a></nav><button class="motion-toggle" id="motionToggle" aria-pressed="false" aria-label="Pause decorative motion">PAUSE MOTION</button><button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode"><span class="theme-icon">☼</span><span class="theme-text">LIGHT</span></button></div></header>
+  <header class="topbar"><a class="logo" href="#top"><span class="logo-mark">✦</span> COOL / CYCLE</a><div class="top-actions"><nav class="chapter-nav" aria-label="Chapters"><a href="#laws">01 / Laws</a><a href="#cycle">02 / Cycle</a><a href="#entropy">03 / States</a><a href="#system">04 / Basics</a><a href="#energy">05 / Energy</a></nav><button class="motion-toggle" id="motionToggle" aria-pressed="false" aria-label="Pause decorative motion">PAUSE MOTION</button><button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode"><span class="theme-icon">☼</span><span class="theme-text">LIGHT</span></button></div></header>
 
   <main id="top">
     <section class="hero section-shell">
@@ -97,6 +97,32 @@
 <h3 class="sub reveal">What is a process?</h3>
 <p class="sub-copy reveal">A process is the path a system follows when it changes from one state to another, such as when its temperature, pressure or volume changes. If a system goes through several processes and ends in its starting state, that sequence is called a cycle. The four-state loop in the T–s diagram above is exactly that.</p>
 <div class="proc-grid reveal"><div class="proc"><h4>Isothermal</h4><span class="rule">Temperature constant</span><p>Ice melting at 0 °C. Heat goes in, but the temperature holds steady.</p></div><div class="proc"><h4>Isobaric</h4><span class="rule">Pressure constant</span><p>Water boiling in an open pot. The air pressure above it stays the same.</p></div><div class="proc"><h4>Isochoric</h4><span class="rule">Volume constant</span><p>Heating a sealed rigid can. It cannot expand, so the pressure rises.</p></div><div class="proc"><h4>Adiabatic</h4><span class="rule">No heat exchanged</span><p>Pumping a bike tyre quickly. The air warms because there is no time for heat to escape.</p></div></div>
+</section>
+
+    <section id="energy" class="system-section section-shell">
+<div class="section-intro reveal"><div><div class="eyebrow">THE ENERGY BOOKKEEPING</div><h2>Energy, Enthalpy,<br>Entropy and Free Energy</h2></div><div class="intro-copy">Four state functions that tell you how much energy a change moves, and whether it will happen on its own.</div></div>
+
+<h3 class="sub reveal">Internal energy (E or U)</h3>
+<p class="sub-copy reveal">The total energy stored inside a system at the molecular level. It does not include the motion or height of the system as a whole.</p>
+<div class="prop-grid reveal"><div class="prop"><h4>Kinetic part</h4><p>Translational + rotational + vibrational motion of the molecules.</p></div><div class="prop"><h4>Potential part</h4><p>Intermolecular forces + bond energy (plus electronic and nuclear energy).</p></div></div>
+<p class="ssb-types reveal"><b>First law.</b> &Delta;E = q + w, where q is heat absorbed by the system and w is work done <em>on</em> the system. At constant pressure, expansion work is w = &minus;P&Delta;V (negative when the system expands).</p>
+
+<h3 class="sub reveal">Enthalpy (H)</h3>
+<p class="sub-copy reveal">Define H = E + PV. At constant pressure, a system goes from state A to B and absorbs heat q. Then E<sub>B</sub> &minus; E<sub>A</sub> = q &minus; P(V<sub>B</sub> &minus; V<sub>A</sub>), so (E<sub>B</sub> + PV<sub>B</sub>) &minus; (E<sub>A</sub> + PV<sub>A</sub>) = q. That means <b>&Delta;H = H<sub>B</sub> &minus; H<sub>A</sub> = q<sub>P</sub></b>: the enthalpy change equals the heat absorbed at constant pressure. E, P and V are state functions, so H and &Delta;H are too.</p>
+<div class="proc-grid reveal"><div class="proc"><h4>&Delta;H &gt; 0</h4><span class="rule">Endothermic (H<sub>final</sub> &gt; H<sub>initial</sub>)</span><p>The system absorbs heat, like ice melting.</p></div><div class="proc"><h4>&Delta;H &lt; 0</h4><span class="rule">Exothermic (H<sub>initial</sub> &gt; H<sub>final</sub>)</span><p>The system releases heat, like burning fuel.</p></div><div class="proc"><h4>At constant P</h4><span class="rule">&Delta;H = &Delta;E + P&Delta;V</span><p>&Delta;H is larger than &Delta;E only if the volume increases. If &Delta;V &lt; 0, &Delta;H is smaller; if &Delta;V = 0, they match.</p></div><div class="proc"><h4>At constant V</h4><span class="rule">&Delta;E = q<sub>V</sub></span><p>Heat absorbed at constant volume gives &Delta;E, not &Delta;H. In general &Delta;H = &Delta;E + V&Delta;P here.</p></div></div>
+
+<h3 class="sub reveal">Enthalpy changes in reactions</h3>
+<p class="sub-copy reveal">The enthalpy of formation is the &Delta;H for forming <b>one mole</b> of a compound from its elements in their standard states. Phase changes have their own enthalpies, and they are not formation reactions.</p>
+<div class="prop-grid reveal"><div class="prop"><h4>Formation</h4><ul><li>C(graphite) + 2H<sub>2</sub>(g) &rarr; CH<sub>4</sub>(g), &Delta;H = &minus;74.8 kJ/mol</li><li>H<sub>2</sub>(g) + &frac12;O<sub>2</sub>(g) &rarr; H<sub>2</sub>O(l), &Delta;H &asymp; &minus;285.8 kJ/mol</li></ul></div><div class="prop"><h4>Phase changes of water</h4><ul><li>Melting: H<sub>2</sub>O(s) &rarr; H<sub>2</sub>O(l), &Delta;H &asymp; +6.0 kJ/mol</li><li>Vaporization: H<sub>2</sub>O(l) &rarr; H<sub>2</sub>O(g), &Delta;H &asymp; +40.7 kJ/mol at 100 &deg;C (about +44 kJ/mol at 25 &deg;C)</li></ul></div></div>
+<p class="ssb-types reveal"><b>Linking &Delta;H and &Delta;E.</b> Volume changes of solids and liquids are tiny, but gases change volume a lot. Treating gases as ideal, P&Delta;V = &Delta;nRT, so <b>&Delta;H = &Delta;E + &Delta;nRT</b>, where &Delta;n = moles of gaseous products &minus; moles of gaseous reactants. Use it to convert between &Delta;H and &Delta;E.</p>
+
+<h3 class="sub reveal">Entropy (S)</h3>
+<p class="sub-copy reveal">Entropy is a state function that tells you whether a change can happen spontaneously: for an isolated system, a spontaneous change has &Delta;S &gt; 0. Clausius introduced it in 1865. For a reversible Carnot engine between T<sub>1</sub> and T<sub>2</sub> (T<sub>2</sub> &gt; T<sub>1</sub>), q<sub>2</sub> is the heat absorbed at T<sub>2</sub> and q<sub>1</sub> is the heat rejected at T<sub>1</sub>. Then (q<sub>2</sub> &minus; q<sub>1</sub>)/q<sub>2</sub> = (T<sub>2</sub> &minus; T<sub>1</sub>)/T<sub>2</sub>, which gives q<sub>2</sub>/T<sub>2</sub> = q<sub>1</sub>/T<sub>1</sub>. Counting heat in as positive and heat out as negative, <b>&sum;q/T = 0</b> over a reversible cycle, even though the net heat q is not zero.</p>
+<p class="ssb-types reveal"><b>Definition.</b> dS = dq<sub>rev</sub>/T, so at constant temperature &Delta;S = q<sub>rev</sub>/T, or q<sub>rev</sub> = T&Delta;S.</p>
+
+<h3 class="sub reveal">Gibbs free energy (G)</h3>
+<p class="sub-copy reveal">G = H &minus; TS is a state function. At constant temperature, &Delta;G = &Delta;H &minus; T&Delta;S. At constant T and P, &minus;&Delta;G is the maximum <em>net useful</em> (non-expansion) work the system can deliver, and a change with &Delta;G &lt; 0 can occur spontaneously.</p>
+<div class="prop-grid reveal"><div class="prop"><h4>Helmholtz work function (A)</h4><ul><li>A = E &minus; TS, so at constant T, &Delta;A = &Delta;E &minus; T&Delta;S.</li><li>For a reversible change, q = T&Delta;S, so &Delta;A = &Delta;E &minus; q.</li><li>With &Delta;E = q &minus; W (W = work done <em>by</em> the system): &Delta;A = &minus;W<sub>rev</sub>.</li><li>The decrease in A at constant T is the maximum work obtainable.</li></ul></div><div class="prop"><h4>Linking G and A</h4><ul><li>At constant P: &Delta;G = &Delta;E + P&Delta;V &minus; T&Delta;S.</li><li>Comparing gives &Delta;G = &Delta;A + P&Delta;V = &minus;W + P&Delta;V.</li><li>So <b>&minus;&Delta;G = W<sub>max</sub> &minus; P&Delta;V</b>: maximum work minus expansion work against constant pressure.</li></ul></div></div>
 </section>
 
     <footer class="footer section-shell"><div class="footer-statement">Stay curious.<br><em>Keep your cool.</em><a class="footer-up" href="#top" aria-label="Back to top">↗</a></div><div class="footer-bottom"><span>COOL / CYCLE — A VISUAL EXPLAINER</span><span class="watermark">Made By <a href="https://github.com/Ajlikeadj" target="_blank" rel="noopener noreferrer">Ajlikeadj</a></span><a href="#top">BACK TO TOP ↑</a></div></footer>

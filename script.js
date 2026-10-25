@@ -1,3 +1,4 @@
+/* COOL / CYCLE — native scrolling, no animation dependencies. */
 (() => {
   'use strict';
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
