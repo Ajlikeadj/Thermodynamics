@@ -1,0 +1,61 @@
+/* COOL / CYCLE — experience layer v2 (site palette only, root only) */
+.sx-loader{position:fixed;inset:0;z-index:120;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .7s ease,visibility .7s ease}
+body.sx-loaded .sx-loader{opacity:0;visibility:hidden;pointer-events:none}
+.sx-loader-mark{font:500 12px 'DM Mono',monospace;letter-spacing:.14em}
+.sx-loader-mark em{font-family:Fraunces,serif;font-style:italic;color:var(--orange)}
+.sx-loader-rule{width:min(280px,64vw);height:1px;background:var(--line);overflow:hidden}
+.sx-loader-rule i{display:block;height:100%;width:0;background:var(--orange);transition:width .15s linear}
+.sx-loader-cap{font:9px 'DM Mono',monospace;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+.sx-loader-pct{font:11px 'DM Mono',monospace;color:var(--orange)}
+
+
+
+
+.sx-word{position:relative;overflow:hidden}
+.sx-word>span{position:absolute;inset:auto 0 -0.22em;font-family:Fraunces,serif;font-style:italic;font-weight:600;font-size:clamp(90px,18vw,280px);line-height:.9;color:transparent;-webkit-text-stroke:1px var(--line);white-space:nowrap;pointer-events:none;user-select:none}
+.sx-comic{padding-block:100px;position:relative;border-top:1px solid var(--line)}
+.sx-panels{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:50px}
+.sx-panel{background:var(--ink);padding:30px 26px;min-height:300px;position:relative;opacity:.45;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease);cursor:pointer;text-align:left;color:inherit;border:0;font:inherit}
+.sx-panel.in{opacity:1;transform:none}
+.sx-panel .num{font:italic 600 52px/1 Fraunces,serif;color:var(--orange)}
+.sx-panel .cap{font:9px 'DM Mono',monospace;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;display:block;margin:14px 0 12px}
+.sx-panel h3{font-size:24px;font-weight:500;letter-spacing:-.03em;margin:0 0 12px}
+.sx-panel p{color:var(--muted);line-height:1.7;font-size:13px;margin:0}
+.sx-panel .hint{margin-top:18px;font:9px 'DM Mono',monospace;color:var(--muted)}
+.sx-panel.on{box-shadow:inset 0 0 0 1px var(--orange)}
+.sx-note{margin-top:22px;color:var(--muted);font-size:12px}
+.sx-vortex{padding-block:100px;border-top:1px solid var(--line);text-align:center}
+.sx-vortex h2{font-family:Fraunces,serif;font-style:italic}
+#sxVortex{width:min(760px,92vw);height:360px;border:1px solid var(--line);background:var(--panel);margin-top:26px}
+.sx-framed{clip-path:inset(18px 18px 18px 18px);transition:clip-path .8s cubic-bezier(.22,1,.36,1)}
+.sx-framed.in{clip-path:inset(0 0 0 0)}
+@media(max-width:900px){.sx-panels{grid-template-columns:1fr}.sx-panel{min-height:0}}
+@media(prefers-reduced-motion:reduce){.sx-framed{clip-path:none}.sx-panel{transform:none;opacity:1}}
+/* mobile / touch */
+html,body{overflow-x:clip}
+#sxVortex{touch-action:pan-y}
+.sx-panel{-webkit-tap-highlight-color:transparent}
+@media(max-width:800px){
+ .sx-comic,.sx-vortex{padding-block:64px}
+ .sx-panels{margin-top:34px}
+ .sx-panel{padding:24px 20px;min-height:44px}
+ .sx-panel .num{font-size:42px}
+ .sx-panel h3{font-size:21px}
+ .sx-panel .hint{font-size:10px}
+ #sxVortex{height:280px;width:100%}
+ .sx-loader{padding:24px}
+ .graph-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:480px){
+ .sx-word>span{font-size:26vw}
+ .sx-panel .num{font-size:36px}
+ .sx-note{font-size:11px}
+ #sxVortex{height:240px}
+}
+
+/* native cursor vanished — only the circle remains (fine pointers only, so touch is unaffected) */
+@media(hover:hover) and (pointer:fine){html,body,html *,body *,a,button,.sx-panel,input,textarea,select,label,[tabindex]{cursor:none !important}}
+#sxInk{position:fixed;inset:0;z-index:90;pointer-events:none;mix-blend-mode:screen}
+.sx-cursor{position:fixed;z-index:110;left:0;top:0;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--orange);pointer-events:none;display:none;mix-blend-mode:screen}
+.sx-cursor-ring{position:fixed;z-index:109;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:1px solid var(--line);pointer-events:none;display:none}
+@media(hover:hover) and (pointer:fine){.sx-cursor,.sx-cursor-ring{display:block}}
