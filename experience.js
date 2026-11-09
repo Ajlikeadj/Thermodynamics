@@ -60,7 +60,7 @@ if(vc){
  const maxR=()=>Math.max(W,H)*.72;
  const resize=()=>{const dpr=Math.min(devicePixelRatio||1,2);W=vc.offsetWidth||600;H=vc.offsetHeight||360;vc.width=W*dpr;vc.height=H*dpr;vctx.setTransform(dpr,0,0,dpr,0,0)};
  resize();addEventListener('resize',()=>{resize();parts.length=Math.min(parts.length,Math.round(Math.min(240,Math.max(110,W*H/3600))))});
- const spawn=p=>{p.a=Math.random()*6.283;p.r=18+Math.random()*maxR();p.z=.45+Math.random()*.55;p.tw=Math.random()*6.283;p.twS=.02+Math.random()*.06;p.eject=Math.random()<.05;p.px=0;p.py=0;p.born=false;return p};
+ const spawn=p=>{p.a=Math.random()*6.283;p.r=18+Math.random()*maxR();p.h=p.r;p.kick=0;p.z=.45+Math.random()*.55;p.tw=Math.random()*6.283;p.twS=.02+Math.random()*.06;p.px=0;p.py=0;p.born=false;return p};
  parts=Array.from({length:Math.round(Math.min(240,Math.max(110,W*H/3600)))},()=>spawn({}));
  const hot=[247,125,83],cold=[165,220,225];
  const mix=(a,b,t)=>Math.round(a+(b-a)*t);
@@ -93,9 +93,14 @@ if(vc){
    const d=Math.hypot(mx-(cx0+Math.cos(pt.a)*pt.r),my-(cy0+Math.sin(pt.a)*pt.r*.62));
    const near=d<nearR?1-d/nearR:0;
    pt.a+=(((2600/(pt.r+60))*.0016)*swirl+near*stir*.02)*pt.z*(1+flash*2.5);
-   pt.r+=pt.eject?.28:-.05+near*stir*.55;
-   if(pt.r>R+30){spawn(pt);pt.r=R+20}
-   if(pt.r<12){pt.r=14;pt.eject=Math.random()<.3}
+   /* Radial: the swirl is elastic. A click adds an outward offset that fades,
+      and the radius eases toward home + offset — so the swirl scatters out and
+      re-forms in about a second and a half instead of cruising to the rim and
+      crawling back at a few pixels a second. */
+   pt.kick*=.94;
+   pt.r+=((pt.h+pt.kick)-pt.r)*.07+near*stir*.55;
+   if(pt.r>R+30){pt.r=R*.9;pt.kick=0}
+   if(pt.r<12)pt.r=12;
    const x=cx0+Math.cos(pt.a)*pt.r,y=cy0+Math.sin(pt.a)*pt.r*.62;
    const t=Math.max(0,Math.min(1,pt.r/R));
    const alpha=(.25+.75*pt.z)*(.7+.3*Math.sin(pt.tw))*(1+near*.6);
@@ -110,7 +115,7 @@ if(vc){
  vc.addEventListener('pointerleave',clearPtr);
  vc.addEventListener('pointerup',clearPtr);
  vc.addEventListener('pointercancel',clearPtr);
- vc.addEventListener('pointerdown',e=>{const b=vc.getBoundingClientRect();mx=e.clientX-b.left;my=e.clientY-b.top;flash=1;for(const pt of parts)if(Math.hypot(mx-(cx0(W)+Math.cos(pt.a)*pt.r),my-(cy0(H)+Math.sin(pt.a)*pt.r*.62))<200)pt.eject=true},{passive:true});
+ vc.addEventListener('pointerdown',e=>{const b=vc.getBoundingClientRect();mx=e.clientX-b.left;my=e.clientY-b.top;flash=1;for(const pt of parts){const d=Math.hypot(mx-(cx0(W)+Math.cos(pt.a)*pt.r),my-(cy0(H)+Math.sin(pt.a)*pt.r*.62));if(d<200)pt.kick=Math.min(Math.max(0,maxR()-pt.h),pt.kick+170*(1-d/200))}},{passive:true});
  function cx0(w){return w/2}function cy0(h){return h/2}
  new IntersectionObserver(es=>{const vis=es[0].isIntersecting;if(vis&&!raf)loop();visible=vis},{threshold:.05}).observe(vc);
  if(reduced){draw()}else{(function loop(){raf=requestAnimationFrame(loop);if(visible)draw()})()}
